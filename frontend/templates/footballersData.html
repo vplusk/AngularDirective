@@ -1,0 +1,49 @@
+<h3>Footballers Data</h3>
+<form action="" ng-show="showForm" name="footballerForm">
+	
+	<p>First name: <input type="text" name="firstName" ng-model="firstName" required/>
+		<span ng-show="footballerForm.firstName.$error.required">Field is required</span>
+	</p>
+	<p>Last name: <input type="text" name="lastName" ng-model="lastName" required/>
+		<span ng-show="footballerForm.lastName.$invalid">Field is required</span>
+	</p>
+	<p>E-mail: <input type="email" name="email" ng-model="email" required/>
+		<span ng-show="footballerForm.email.$invalid">Invalid email address.</span>
+	</p>
+	
+
+
+	<a ng-click="saveFootballer(id, firstName, lastName, email);">
+		<span class="glyphicon glyphicon-floppy-disk" style="font-size:25px;padding-right:15px;"></span>
+	</a>
+	<a ng-click="cancelEditting();">
+		<span class="glyphicon glyphicon-ban-circle" style="font-size:25px;padding-right:15px;"></span>
+	</a>
+</form>
+<table class="table">
+	<tr>
+		<th>#</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	<tr ng-repeat="footballer in footballers track by $index">
+		<td>{{ $index }}</td>
+		<td>{{ footballer.firstName }}</td>
+		<td>{{ footballer.lastName }}</td>
+		<td>{{ footballer.email }}</td>
+		<td>
+			<a ng-click="onEditFootballer($index);">
+				<span class="glyphicon glyphicon-pencil"></span>
+			</a>
+			
+		</td>
+		<td>
+			<a ng-click="deleteFootballer($index);">
+				<span class="glyphicon glyphicon-remove"></span>		
+			</a>
+		</td>		
+	</tr>
+</table>

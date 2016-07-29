@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="footballApp">
+	<head>
+		<title>Angular directive</title>
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	</head>
+	<body ng-cloak>
+		<div class="container">
+			<div class="row">
+				<footballers-data></footballers-data>
+			</div>
+		</div>
+		<script src="/bower_components/angular/angular.js"></script>
+		<script src="/bower_components/angular-route/angular-route.js"></script>
+		<script>
+			var module = angular.module('footballApp', ['ngRoute']);
+		</script>
+
+		<script src="/frontend/services/footballersFactory.js"></script>
+		<script src="/frontend/directives/footballersDirective.js"></script>  
+		<script src="/frontend/routes.js"></script>
+		
+		
+		<script src="/frontend/controllers/FootballController.js"></script>
+	</body>
+</html>
+
+
+
